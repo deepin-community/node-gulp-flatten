@@ -1,0 +1,62 @@
+Description: ignore gulp test, written for 3.9
+ one can not test gulp in a sync test, gulp.start() no more exists
+Author: Xavier Guimard <yadd@debian.org>
+Forwarded: not-needed
+Last-Update: 2020-03-22
+
+--- a/test/main.js
++++ b/test/main.js
+@@ -1,7 +1,7 @@
+ var should = require('should');
+ var flatten = require('../');
+ var Vinyl = require('vinyl');
+-var gulp = require('gulp');
++//var gulp = require('gulp');
+ var path = require('path');
+ var fileInstance;
+ 
+@@ -56,26 +56,26 @@
+       stream.write(fileInstance);
+     });
+ 
+-    it('should ignore directories', function (done) {
+-      var stream = flatten();
+-
+-      stream.on('error', done);
+-      stream.on('data', function(newFile) {
+-        should.exist(newFile);
+-        should.exist(newFile.path);
+-        should.exist(newFile.relative);
+-
+-        newFile.relative.should.equal('test.css');
+-        done();
+-      });
++    //it('should ignore directories', function (done) {
++    //  var stream = flatten();
+ 
+-      gulp.task('dottask', function () {
+-        gulp.src(path.join(__dirname, '/test_dir/**/*.css'))
+-          .pipe(stream);
+-      });
++    //  stream.on('error', done);
++    //  stream.on('data', function(newFile) {
++    //    should.exist(newFile);
++    //    should.exist(newFile.path);
++    //    should.exist(newFile.relative);
++
++    //    newFile.relative.should.equal('test.css');
++    //    done();
++    //  });
++
++    //  gulp.task('dottask', function () {
++    //    gulp.src(path.join(__dirname, '/test_dir/**/*.css'))
++    //      .pipe(stream);
++    //  });
+ 
+-      gulp.start('dottask');
+-    });
++    //  gulp.start('dottask');
++    //});
+ 
+     it('should strip relative path at the specified depth if depth option is passed', function (done) {
+       var stream = flatten({includeParents: 2});

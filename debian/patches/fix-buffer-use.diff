@@ -1,0 +1,16 @@
+Description: replace Buffer() by Buffer.from()
+Author: Xavier Guimard <yadd@debian.org>
+Forwarded: no
+Last-Update: 2020-03-01
+
+--- a/test/main.js
++++ b/test/main.js
+@@ -12,7 +12,7 @@
+       cwd: '/some/project/',
+       base: '/some/project/src/',
+       path: '/some/project/src/assets/css/app.css',
+-      contents: new Buffer('html { background-color: #777; }')
++      contents: new Buffer.from('html { background-color: #777; }')
+     });
+   });
+ 

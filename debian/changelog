@@ -1,0 +1,42 @@
+node-gulp-flatten (0.4.0-4) unstable; urgency=medium
+
+  * Team upload
+  * Ignore gulp test not compatible with gulp 4 and sync test
+    (Closes: #954508)
+  * Remove build dependency to gulp
+
+ -- Xavier Guimard <yadd@debian.org>  Sun, 22 Mar 2020 10:04:14 +0100
+
+node-gulp-flatten (0.4.0-3) unstable; urgency=medium
+
+  * Team upload
+
+  [ Debian Janitor ]
+  * Bump debhelper from old 11 to 12.
+  * Set debhelper-compat version in Build-Depends.
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+
+  [ Xavier Guimard ]
+  * Declare compliance with policy 4.5.0
+  * Use pkg-js-tools auto test & install
+  * Add "Rules-Requires-Root: no"
+  * Add debian/gbp.conf
+  * Update debian/watch to use npm registry
+  * Replace Buffer() by Buffer.from()
+
+ -- Xavier Guimard <yadd@debian.org>  Sun, 01 Mar 2020 01:47:21 +0100
+
+node-gulp-flatten (0.4.0-2) unstable; urgency=medium
+
+  * Team upload
+  * Move to salsa
+  * Bump compat and policy
+
+ -- Bastien Roucariès <rouca@debian.org>  Tue, 15 May 2018 15:03:03 +0200
+
+node-gulp-flatten (0.4.0-1) unstable; urgency=low
+
+  * Initial release (Closes: #886313)
+
+ -- Pirate Praveen <praveen@debian.org>  Thu, 04 Jan 2018 16:29:06 +0530
